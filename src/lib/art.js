@@ -47,10 +47,12 @@ export function searchFrom(artSearcher) {
     }
   }
 
+  artSearcher?.appendChild(
+    el("p",{},"Veldu listaverk:")
+  );
   const formElement = el(
     "form",
     { submit: onSubmitHandler },
-    el("label", {}, "Leitarorð"),
     inputElement,
     el("button", { type: "submit" }, "Leita")
   );

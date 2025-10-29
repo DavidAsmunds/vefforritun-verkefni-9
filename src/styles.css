@@ -14,3 +14,151 @@ html {
 }
 
 /* TODO einfalt viðmót */
+
+:root {
+  --spacing: 1.5rem;
+  --max-width: 50rem;
+
+  --font-size-button: 1rem;
+  --font-family: -system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  --color-light-gray: #f5f5f5;
+  --color-background-code: var(--color-light-gray);
+  --color-button: #80eaff;
+  --color-button-destructive: #ff7e7e;
+
+  --border-button: none;
+  --border-radius-button: 5px;
+}
+
+
+
+.hidden {
+  /* Viljum að þetta feli alltaf element, notum því !important */
+  display: none !important;
+}
+
+.empty {
+  font-style: italic;
+}
+
+html {
+  font-family: var(--font-family);
+}
+
+input,
+textarea,
+button {
+  font-size: inherit;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  height: 100%;
+  cursor: pointer;
+
+  font-size: var(--font-size-button);
+
+  background-color: var(--color-button);
+  border: var(--border-button);
+  border-radius: var(--border-radius-button);
+}
+
+button.destructive {
+  background-color: var(--color-button-destructive);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+
+  margin: var(--spacing) auto;
+  padding-inline: var(--spacing);
+  max-width: var(--max-width);
+}
+
+.art-searcher {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 1.5);
+}
+
+.art-searcher form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: calc(var(--spacing) / 2);
+}
+
+.art-searcher form label {
+  display: block;
+  width: 100%;
+  margin-bottom: calc(var(--spacing) / 2);
+}
+
+.art-searcher .input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) / 4);
+}
+
+.art-searcher form input {
+  flex: 1;
+  width: 100%;
+  padding: calc(var(--spacing) / 4);
+}
+
+.art-searcher .list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.art-searcher .list li,
+.art-searcher .list li label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) / 2);
+}
+
+.art-searcher .list li.finished .item {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.art-searcher .list li input {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.art-searcher .list li .item {
+  flex: 1;
+  word-break: break-word;
+}
+
+.art-searcher .list li button {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media (min-width: 500px) {
+  .art-searcher form {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: calc(var(--spacing) / 2);
+}
